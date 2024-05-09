@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      transform: translateY(-100%); /* Initially, move the menu off-screen to the top */
+      transition: transform 0.3s ease-in-out; /* Add the transition for smooth animation */
+    }
+  
+    .navbar.open .navbar-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(0); /* Move the menu back to its original position */
+    }
+  }
