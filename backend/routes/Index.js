@@ -1,64 +1,26 @@
-const signUpRoute = require("./SignUpRoute");
-const loginRoute = require("./LoginRoute");
-const verifyEmailRoute = require("./VerifyEmailRoute");
-const forgotPasswordRoute = require("./ForgotPasswordRoute");
-const resetPasswordRoute = require("./ResetPasswordRoute");
-const khaltiPayment = require("./Khalti");
-const {
-    addOrder,
-    getAllOrders,
-    getOrder,
-    getArtistOrder,
-} = require("./OrderRoute");
+const signUpRoute = require('./SignUpRoute');
+const loginRoute = require('./LoginRoute');
+const verifyEmailRoute = require('./VerifyEmailRoute');
+const forgotPasswordRoute = require('./ForgotPasswordRoute');
+const resetPasswordRoute = require('./ResetPasswordRoute');
+const khaltiPayment = require('./Khalti');
+const { addOrder, getAllOrders, getOrder, getArtistOrder } = require('./OrderRoute');
 
-const { getAllUsers, getUser, deleteUser, updateUser } = require("./UserRoute");
+const { getAllUsers, getUser, deleteUser, updateUser } = require('./UserRoute');
 
-const getGoogleOauthUrlRoute = require("./GoogleOauthURLroute");
+const getGoogleOauthUrlRoute = require('./GoogleOauthURLroute');
 
-const googleOauthCallbackRoute = require('./GoogleOauthCallbackRoute')
+const googleOauthCallbackRoute = require('./GoogleOauthCallbackRoute');
 
-const {
-    addBiography,
-    updateBiography,
-    getAllArtists,
-    getArtist,
-    addArtistEvent,
-    getArtistExhibitions,
-    getBiography,
-    deleteExhibition,
-    updateArtistEvent,
-    getExhibitions,
-    getArtistProduct,
-} = require("./ArtistInfoRoutes");
+const { addBiography, updateBiography, getAllArtists, getArtist, addArtistEvent, getArtistExhibitions, getBiography, deleteExhibition, updateArtistEvent, getExhibitions, getArtistProduct } = require('./ArtistInfoRoutes');
 
-const {
-    addProducts,
-    updateProducts,
-    getAllProducts,
-    getProduct,
-    deleteProduct,
-} = require("./ProductRoute");
+const { addProducts, updateProducts, getAllProducts, getProduct, deleteProduct } = require('./ProductRoute');
 
-const {
-    addEvents,
-    getAllEvents,
-    getEvent,
-    updateEvents,
-    deleteEvent,
-    sendEventMail,
-} = require("./EventsRoute");
+const { addEvents, getAllEvents, getEvent, updateEvents, deleteEvent, sendEventMail } = require('./EventsRoute');
 
-const {
-    addToCart,
-    getCartDetails,
-    getCartProductDetails,
-    deleteCartProduct,
-    deleteCart,
-} = require("./CartRoute");
+const { addToCart, getCartDetails, getCartProductDetails, deleteCartProduct, deleteCart } = require('./CartRoute');
 
-const { addDelivery, getDeliveryDetails } = require("./DeliveryRoute");
-
-
+const { addDelivery, getDeliveryDetails } = require('./DeliveryRoute');
 
 const routes = [
     signUpRoute,
@@ -66,25 +28,20 @@ const routes = [
     forgotPasswordRoute,
     resetPasswordRoute,
     loginRoute,
-    
-
     getAllUsers,
     getUser,
     deleteUser,
     updateUser,
-
     addProducts,
     updateProducts,
     getAllProducts,
     getProduct,
     deleteProduct,
-
     addEvents,
     getAllEvents,
     getEvent,
     updateEvents,
     deleteEvent,
-
     addBiography,
     updateBiography,
     getAllArtists,
@@ -96,23 +53,17 @@ const routes = [
     deleteExhibition,
     getExhibitions,
     getArtistProduct,
-
     addToCart,
     getCartDetails,
     getCartProductDetails,
     deleteCartProduct,
     deleteCart,
-
     addDelivery,
     getDeliveryDetails,
-
     addOrder,
     getAllOrders,
     getOrder,
     getArtistOrder,
-
-    
-
     khaltiPayment,
     getGoogleOauthUrlRoute,
     googleOauthCallbackRoute,

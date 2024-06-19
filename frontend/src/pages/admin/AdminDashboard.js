@@ -1,14 +1,22 @@
 import axios from "axios";
-import { Box } from "../../components/DashboardBox";
-import { Heading1, Heading2 } from "../../components/Heading";
-import { useUser } from "../../service/useUser";
+import { Heading2 } from "../../components/Heading";
 import { useState, useEffect } from "react";
 import { LineChart, Piechart, VerticalBar } from "../../components/Charts";
 import { formatDataForCharts } from "../../helpers/FormatChartData";
 
+// const response = await axios.get('http://localhost:5000/api/admin/protected', {
+//     method: 'GET',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'x-auth-token': localStorage.getItem('token'),
+//     },
+// });
+// const data = await response.json();
+
 const AdminDashboard = () => {
+    
   
-    const [totalAmount, setTotalAmount] = useState();
+    const [ setTotalAmount] = useState();
     const [totalArtist, setTotalArtist] = useState("");
     const [totalUser, setTotalUser] = useState();
     const [pieChartData, setPieChartData] = useState({
@@ -145,7 +153,7 @@ const AdminDashboard = () => {
         getOrders();
         document.title = "Admin Dashboard | SimplyArt"; 
 
-    }, []);
+    }, );
 
     
 

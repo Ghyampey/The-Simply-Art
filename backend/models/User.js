@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username:{
         type: String,
      
@@ -11,6 +11,7 @@ const userSchema = mongoose.Schema({
         type: String,
         unique: true,
         trim:true,
+        sparse:true,
     },
     email: {
         type: String,

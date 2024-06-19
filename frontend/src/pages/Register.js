@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import Input from "../components/Input";
@@ -6,9 +6,10 @@ import axios from "axios";
 import { useToken } from "../service/useToken";
 import { BiArrowBack } from "react-icons/bi";
 import { ErrorToast } from "../helpers/Toast";
+import VerifyEmailPage from "./emailVerification/VerifyEmailPage";
 
 function Register() {
-    const [token, setToken] = useToken();
+    const [ setToken] = useToken();
 
     const navigate = useNavigate();
 
@@ -31,7 +32,7 @@ function Register() {
     }) => {
         try {
             const userType = role ? "artist" : "user";
-            const response = await axios.post(
+            await axios.post(
                 "http://localhost:5000/api/signup",
                 {
                     username: username,
@@ -40,12 +41,13 @@ function Register() {
                     role: userType,
                 }
             );
+        
             // console.log(confirmPassword, email);
             // console.log(response.data);
             // const { token } = response.data;
             // console.log(token);
             // setToken(token);
-            navigate("/verify-email");
+            navigate(VerifyEmailPage);
         } catch (err) {
             if (err.response) {
                 // Error with response received

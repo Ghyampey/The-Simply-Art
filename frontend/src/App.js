@@ -1,4 +1,5 @@
 import {  useLocation, Routes, Route } from "react-router-dom";
+// import {React,  useState,useEffect } from "react";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";

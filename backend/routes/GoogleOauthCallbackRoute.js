@@ -1,7 +1,8 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const getGoogleUser = require("../Utils/GetGoogleUser");
-const updateOrCreateFromOauth = require("../Utils/UpdateOrCreateUserFromOauth");
+const updateOrCreateFromOauth = require("../Utils/UpdateOrCreateUserFromOauth").default;
+
 
 const googleOauthCallbackRoute = {
     path: "/auth/google/callback",

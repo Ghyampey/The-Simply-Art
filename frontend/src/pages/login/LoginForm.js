@@ -38,7 +38,9 @@ export const LoginForm = ({ formHeading }) => {
     }, [oauthToken, setToken, navigate]);
 
     const handleLogin = async ({ email, password }) => {
+        // 
         try {
+            
             const response = await axios.post(
                 "http://localhost:5000/api/login",
                 {
@@ -46,6 +48,7 @@ export const LoginForm = ({ formHeading }) => {
                     password: password,
                 }
             );
+            
 
             const { token } = response.data;
             setToken(token);
@@ -74,10 +77,10 @@ export const LoginForm = ({ formHeading }) => {
                     ErrorToast("Invalid Credentials");
                 } else {
                     // Other errors
-                    console.log(
-                        "Error with response:",
-                        err.response.data.message
-                    );
+                    // console.log(
+                    //     "Error with response:",
+                    //     err.response.data.message
+                    // );
                 }
             } else if (err.request) {
                 // Error making the request

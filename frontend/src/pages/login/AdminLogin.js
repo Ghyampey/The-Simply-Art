@@ -1,4 +1,13 @@
 import { LoginForm } from "./LoginForm"
+// const response = await fetch('http://localhost:5000/api/admin/protected', {
+//     method: 'GET',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'x-auth-token': localStorage.getItem('token'),
+//     },
+// });
+// const data = await response.json();
+
 
 const AdminLogin = () =>{
     return(
