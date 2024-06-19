@@ -1,7 +1,7 @@
 import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useToken } from "../../service/useToken";
 import { SuccessToast, ErrorToast } from "../../helpers/Toast";
 import { BiArrowBack } from "react-icons/bi";
@@ -133,7 +133,7 @@ export const LoginForm = ({ formHeading }) => {
                         placeholder="Password"
                         register={{
                             ...register("password", {
-                                required: "Please enter youy password.",
+                                required: "Please enter your password.",
                             }),
                         }}
                     />
