@@ -3,13 +3,11 @@ import { useForm, Controller } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import Input from "../components/Input";
 import axios from "axios";
-import { useToken } from "../service/useToken";
 import { BiArrowBack } from "react-icons/bi";
 import { ErrorToast } from "../helpers/Toast";
-import VerifyEmailPage from "./emailVerification/VerifyEmailPage";
 
 function Register() {
-    const [ setToken] = useToken();
+    // const [] = useToken();
 
     const navigate = useNavigate();
 
@@ -47,7 +45,7 @@ function Register() {
             // const { token } = response.data;
             // console.log(token);
             // setToken(token);
-            navigate(VerifyEmailPage);
+            navigate('/verify-email');
         } catch (err) {
             if (err.response) {
                 // Error with response received

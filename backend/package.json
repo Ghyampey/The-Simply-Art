@@ -7,7 +7,7 @@
     "dev": "nodemon main.js",
     "start": "node main.js"
   },
-  "author": "Pratham Maharjan",
+  "author": "Sushant Gautam",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",

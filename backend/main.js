@@ -1,7 +1,6 @@
 // require('dotenv').config();
 // const express = require('express');
 // const helmet = require('helmet');
-// const expressAsyncErrors = require('express-async-errors');
 // const fileUpload = require('express-fileupload');
 // const { forEach } = require('./routes/Index');
 // const connectDB = require('./db/Connect');
@@ -50,6 +49,7 @@
 // };
 
 // start();
+
 require('dotenv').config();
 const express = require('express');
 const helmet = require('helmet');
@@ -75,27 +75,21 @@ app.use(express.json());
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use('/api/admin', require('./routes/admin'));
 
-// Setting up routes
-// routes.forEach((route) => {
-//     app.use('/api', route); // Assuming all routes are prefixed with '/api'
-// });
-// routes.forEach((route) => {
-//     if (typeof route === 'function') {
-//         app.use('/api', route); // Assuming all routes are prefixed with '/api'
-//     } else {
-//         console.error('Invalid route:', route);
-//     }
-// });
+// Validate and set up routes
+const validMethods = ['get', 'post', 'put', 'delete', 'patch'];
 
 routes.forEach((route) => {
     const { path, method, handler } = route;
+    if (!validMethods.includes(method)) {
+        console.error(`Invalid method ${method} for path ${path}`);
+        return;
+    }
     if (Array.isArray(handler)) {
         app[method](path, ...handler);
     } else {
         app[method](path, handler);
     }
 });
-
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);

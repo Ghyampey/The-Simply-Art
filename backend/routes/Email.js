@@ -7,7 +7,7 @@ apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
 const testEmailRoute = {
     path: "/api/test-email",
     method: "post",
-    handler: async (req, res) => {
+    handler: async (_req, res) => {
         let mail = new email.TransactionalEmailsApi();
         try {
             await mail.sendTransacEmail({
@@ -19,7 +19,7 @@ const testEmailRoute = {
                 replyTo: {
                     email: "simply.art213@gmail.com",
                 },
-                to: [{ email: "prathammaharjan1939@gmail.com" }],
+                to: [{ email: "sojoktosushant@gmail.com" }],
                 htmlContent:
                     "<html><body><h1>This is a transactional email {{params.bodyMessage}}</h1></body></html>",
                 params: { bodyMessage: "Made just for you!" },

@@ -6,7 +6,7 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 
 // Protected route example
-router.get('/protected', auth, (req, res) => {
+router.get('/protected', auth, (_req, res) => {
     res.send('This is a protected route');
 });
 

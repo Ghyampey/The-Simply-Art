@@ -7,16 +7,16 @@ let mailTransporter = nodemailer.createTransport({
         rateDelta: 1000,
         rateLimit: 4
       },
-    service: "hotmail",
+    service: "gmail",
     auth: {
-        user: "simply.art213@outlook.com",
-        pass: "simplyart#1234",
+        user: "ashketcham312@gmail.com",
+        pass: "nsaq tfzw lzqk pgrr",
     },
 });
 
 let details = {
-    from: "simply.art213@outlook.com",
-    to: "prathammaharjan1939@gmail.com",
+    from: "ashketcham312@gmail.com",
+    to: "sojoktosushant@gmail.com",
     subject: "Test email",
     text: "testing first email",
 };
