@@ -24,13 +24,12 @@ router.post('/register', async (req, res) => {
         user = new User.create({
             name,
             email,
-            password,
+            passwordHash: password, // This will be hashed by the pre-save middleware
             role: role || 'admin',
         });
 
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
-
         await user.save();
 
         const payload = {
@@ -61,6 +60,7 @@ router.post('/login', async (req, res) => {
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
+        console.log("comparision", isMatch)
         if (!isMatch) {
             return res.status(400).json({ msg: 'Invalid Credentials' });
         }

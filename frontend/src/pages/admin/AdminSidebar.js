@@ -38,10 +38,10 @@ export const AdminSidebar = () => {
             subItems: [
                 {
                     subItemName: "Manage Users",
-                    link: "/admin-dashboard/users",
+                    link: "/admin-dashboard/User",
                 },
             ],
-            link: "/admin-dashboard/users",
+            link: "/admin-dashboard/User",
             icon: <AiOutlineUser />,
         },     
     ];

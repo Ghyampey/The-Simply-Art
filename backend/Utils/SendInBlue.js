@@ -6,7 +6,7 @@ const apiKey = client.authentications["api-key"];
 apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
 
 const sendEventsEmail = async ({
-    users,
+    User,
     name,
     location,
     startDate,
@@ -14,7 +14,7 @@ const sendEventsEmail = async ({
     image,
 }) => {
    
-    const emails = users.map((user) => ({
+    const emails = User.map((user) => ({
         email: user.email,
     }));
 

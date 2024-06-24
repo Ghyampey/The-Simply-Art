@@ -51,7 +51,7 @@ const UserProfilePage = () => {
     const getUser = async () => {
         if(user){
         const response = await axios.get(
-            `http://localhost:5000/api/users/${user.id}`
+            `http://localhost:5000/api/User/${user.id}`
         );
         setUserInfo(response.data.user);
         setartistCheck(response.data.user.role === "artist" ? true : false);
@@ -67,7 +67,7 @@ const UserProfilePage = () => {
         if (confirmPassword || receiveEmail || role) {
             try {
                 const response = await axios.patch(
-                    `http://localhost:5000/api/users/${user.id}`,
+                    `http://localhost:5000/api/User/${user.id}`,
                     {
                         confirmPassword,
                         receiveEmail,

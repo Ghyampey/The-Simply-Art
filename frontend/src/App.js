@@ -238,7 +238,7 @@ function App() {
                                         element={<PrivateRouteAdmin Component={AdminEventPage} />}
                                     />
                                     <Route
-                                        path="users"
+                                        path="User"
                                         element={<PrivateRouteAdmin Component={UserList} />}
                                     />
                                     <Route

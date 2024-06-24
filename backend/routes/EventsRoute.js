@@ -45,10 +45,10 @@ const addEvents = {
                 endTime,
             });
 
-            const users = await User.find({ receiveEmail: true });
+            const User = await User.find({ receiveEmail: true });
 
             sendEventsEmail({
-                users: users,
+                User: User,
                 name: name,
                 location: location,
                 startDate: startDate,

@@ -4,7 +4,7 @@ const User = require("../models/User");
 const connectDB = require("../db/Connect");
 
 const resetPasswordRoute = {
-    path: "/api/users/:passwordResetCode/reset-password",
+    path: "/api/User/:passwordResetCode/reset-password",
     method: "put",
     handler: async (req, res) => {
         const { passwordResetCode } = req.params;

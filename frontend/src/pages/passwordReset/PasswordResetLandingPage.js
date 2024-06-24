@@ -41,7 +41,7 @@ const PasswordResetLandingPage = () => {
     const onResetClick = async () => {
         try {
             await axios.put(
-                `http://localhost:5000/api/users/${passwordResetCode}/reset-password`,
+                `http://localhost:5000/api/User/${passwordResetCode}/reset-password`,
                 { newPassword: values.confirmPassword }
             );
             setIsSuccess(true);

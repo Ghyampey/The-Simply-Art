@@ -3,18 +3,18 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 
 const getAllUsers = {
-    path: "/api/users",
+    path: "/api/User",
     method: "get",
     handler: async (req, res) => {
         const { role } = req.query;
-        const users = await User.find({ role });
+        const User = await User.find({ role });
 
-        res.status(200).json({ users });
+        res.status(200).json({ User });
     },
 };
 
 const updateUser = {
-    path: "/api/users/:id",
+    path: "/api/User/:id",
     method: "patch",
     handler: async (req, res) => {
         const { id: userID } = req.params;
@@ -26,7 +26,7 @@ const updateUser = {
             newPasswordHash = await bcrypt.hash(confirmPassword, 10);
         }
         console.log(newPasswordHash);
-        const users = await User.findOneAndUpdate(
+        const User = await User.findOneAndUpdate(
             { _id: userID },
             {
                 ...(confirmPassword && { passwordHash: newPasswordHash }),
@@ -47,7 +47,7 @@ const updateUser = {
 };
 
 const getUser = {
-    path: "/api/users/:id",
+    path: "/api/User/:id",
     method: "get",
     handler: async (req, res) => {
         const { id: userID } = req.params;
@@ -60,7 +60,7 @@ const getUser = {
 };
 
 const deleteUser = {
-    path: "/api/users/:id",
+    path: "/api/User/:id",
     method: "delete",
     handler: async (req, res) => {
         const { id: userID } = req.params;

@@ -53,7 +53,7 @@ export const LoginForm = ({ formHeading }) => {
             const { token } = response.data;
             setToken(token);
 
-            if (formHeading === "Admin") {
+            if (formHeading === "admin") {
                 navigate("/admin-dashboard");
                 window.location.reload(true);
             } else {
@@ -148,7 +148,7 @@ export const LoginForm = ({ formHeading }) => {
                     >
                         Log in
                     </button>
-                    {formHeading !== "Admin" && (
+                    {formHeading !== "admin" && (
                     <button
                         type="button"
                         disabled={!googleOauthUrl}
@@ -164,7 +164,7 @@ export const LoginForm = ({ formHeading }) => {
                     </button>
                     )}
                 </form>
-                {formHeading !== "Admin" && (
+                {formHeading !== "admin" && (
                     <div className="flex flex-col justify-center items-center">
                         <p>
                             <Link to="/forgot-password">Forgot password</Link>{" "}

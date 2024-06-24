@@ -34,5 +34,6 @@ const artistSchema = mongoose.Schema({
     },
 
 });
+module.exports = mongoose.model("Artist", artistSchema);
+// module.exports = mongoose.model("Exhibition", exhibitionSchema);
 
-module.exports = mongoose.model("Exhibition", exhitioSchema);

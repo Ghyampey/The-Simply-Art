@@ -10,17 +10,17 @@ export const UserTable = ({ userType }) => {
 
     const getUsers = async () => {
         const userData = await axios.get(
-            `http://localhost:5000/api/users?role=${userType}`
+            `http://localhost:5000/api/User?role=${userType}`
         );
 
-        const data = await userData.data.users;
+        const data = await userData.data.User;
         setUserList(data);
         console.log("getEvents", data);
     };
 
     const deleteUser = async (id) => {
         const deleteData = await axios.delete(
-            `http://localhost:5000/api/users/${id}`
+            `http://localhost:5000/api/User/${id}`
         );
         SuccessToast("User has been deleted.")
         getUsers();
