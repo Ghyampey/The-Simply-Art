@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
-const artistSchema = mongoose.Schema({
+const { Exhibition } = require("./Artist");
+// mongoose.set("strictQuery", false);
+const artistdesSchema = mongoose.Schema({
     name:{
         type: String,
         required: [true, "Name is required"],
@@ -34,6 +35,5 @@ const artistSchema = mongoose.Schema({
     },
 
 });
-module.exports = mongoose.model("Artist", artistSchema);
-// module.exports = mongoose.model("Exhibition", exhibitionSchema);
-
+const Artistdes = mongoose.model("Artistdes", artistdesSchema);
+module.exports = {Artistdes};

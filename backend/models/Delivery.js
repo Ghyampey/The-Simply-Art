@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 const deliverySchema = mongoose.Schema({
     city: {
         type: String,
@@ -24,4 +24,5 @@ const deliverySchema = mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("Delivery", deliverySchema);
+const Delivery = mongoose.model("Delivery", deliverySchema);
+module.exports = {Delivery};

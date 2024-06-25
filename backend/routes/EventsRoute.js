@@ -3,12 +3,13 @@ const connectDB = require("../db/Connect");
 const jwt = require("jsonwebtoken");
 const connectCloudinary = require("../db/Cloudinary");
 const cloudinary = require("cloudinary").v2;
-const Event = require("../models/Events");
+const {Event} = require("../models/Events");
 const multer = require("multer");
 const sendEventsEmail = require("../Utils/SendInBlue");
 const User = require("../models/User");
 
 const upload = multer({ dest: null });
+connectDB();
 
 const addEvents = {
     path: "/api/events",
@@ -34,7 +35,7 @@ const addEvents = {
                 folder: "events",
             });
 
-            const event = await Event.create({
+            const events = await Event.create({
                 name,
                 place,
                 location,

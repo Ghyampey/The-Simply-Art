@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 const eventsSchema = mongoose.Schema({
     name: {
         type: String,
@@ -38,4 +38,5 @@ const eventsSchema = mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("Events", eventsSchema);
+const Event = mongoose.model("Events", eventsSchema);
+module.exports = { Event};

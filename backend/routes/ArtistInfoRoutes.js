@@ -301,7 +301,7 @@ const jwt = require("jsonwebtoken");
 const connectCloudinary = require("../db/Cloudinary");
 const cloudinary = require("cloudinary").v2;
 const { Artist, Exhibition } = require("../models/Artist");
-const Product = require("../models/Products");
+const {Product} = require("../models/Products");
 const multer = require("multer");
 
 const upload = multer({ dest: null });

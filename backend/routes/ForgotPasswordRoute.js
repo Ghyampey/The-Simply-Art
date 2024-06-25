@@ -33,4 +33,4 @@ handler:async(req,res)=>{
 }
 }
 
-module.exports = forgoPasswordRoute
+module.exports = forgoPasswordRoute;

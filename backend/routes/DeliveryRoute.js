@@ -64,5 +64,6 @@ const getCartProductDetails = {
 };
 module.exports = {
     addDelivery,
-    getDeliveryDetails
+    getDeliveryDetails,
+    getCartProductDetails
 };

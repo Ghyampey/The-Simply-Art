@@ -88,7 +88,7 @@
 require("dotenv").config();
 const { sign } = require("jsonwebtoken");
 const { hash } = require("bcrypt");
-const User = require("../models/User"); // Ensure the path is correct
+const {User} = require("../models/User"); // Ensure the path is correct
 const { v4: uuidv4 } = require("uuid");
 const sendTEmail = require('../Utils/Email');
 

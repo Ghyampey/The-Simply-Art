@@ -14,10 +14,10 @@ const testEmailRoute = {
                 subject: "Hello from the Node SDK!",
                 sender: {
                     name: "SimplyArt Team",
-                    email: "simply.art213@gmail.com",
+                    email: "ashketcham312@gmail.com",
                 },
                 replyTo: {
-                    email: "simply.art213@gmail.com",
+                    email: "ashketcham312@gmail.com",
                 },
                 to: [{ email: "sojoktosushant@gmail.com" }],
                 htmlContent:

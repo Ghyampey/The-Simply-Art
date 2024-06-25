@@ -97,11 +97,11 @@
 //     getArtistOrder
 // };
 
-const Cart = require("../models/Cart");
-const Product = require("../models/Products");
-const Order = require("../models/Order");
+const {Cart} = require("../models/Cart");
+const {Product} = require("../models/Products");
+const {Order} = require("../models/Order");
 const sendEmail = require('../Utils/Email')
-const User = require("../models/User");
+const {User} = require("../models/User");
 
 const addOrder = {
     path: "/api/add-order",

@@ -2,7 +2,7 @@ require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
 const connectCloudinary = require("../db/Cloudinary");
 const jwt = require("jsonwebtoken");
-const Product = require("../models/Products");
+const {Product} = require("../models/Products");
 const multer = require("multer");
 
 const upload = multer({ dest: null });

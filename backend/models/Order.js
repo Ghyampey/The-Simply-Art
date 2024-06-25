@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Product = require('./Products')
+// const Product = require('./Products')
 const orderSchema = new mongoose.Schema(
   {
     userId: {
@@ -35,5 +35,5 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Order", orderSchema);
-// module.exports = mongoose.model("Product",Product);
+const Order = mongoose.model("Order", orderSchema);
+module.exports = {Order};
