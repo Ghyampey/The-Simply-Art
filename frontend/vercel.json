@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "main.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/main.js" },
+    { "source": "/(.*)", "destination": "/frontend/build/index.html" }
+  ]
+}
